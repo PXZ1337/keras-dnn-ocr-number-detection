@@ -1,0 +1,1 @@
+from .config import MODEL_FILE_PATH, MODEL_WEIGHTS_FILE_PATH
