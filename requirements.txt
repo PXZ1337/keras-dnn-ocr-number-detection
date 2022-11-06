@@ -1,0 +1,6 @@
+numpy==1.23.*
+PyQt5
+matplotlib
+scipy
+opencv-python
+pythonlangutil

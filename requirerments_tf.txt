@@ -1,0 +1,4 @@
+tensorflow==2.7.*
+tensorflow-datasets
+tensorflow-addons
+tensorcross
