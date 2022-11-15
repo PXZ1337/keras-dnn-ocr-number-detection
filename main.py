@@ -2,7 +2,7 @@ import sys
 
 from PyQt5 import QtWidgets
 
-from canvas import MnistDeepNeuronalNetwork, ApplicationUi, MODEL_FILE_PATH
+from src import DeepNeuralNetwork, ApplicationUi
 
 def application_gui() -> int:
     app = QtWidgets.QApplication(sys.argv)
@@ -11,7 +11,7 @@ def application_gui() -> int:
     sys.exit(app.exec_())
 
 def build_and_train_mnist_model(): 
-    mnist_deep_neuronal_network = MnistDeepNeuronalNetwork(
+    mnist_deep_neuronal_network = DeepNeuralNetwork(
         num_features=784,
         num_targets=10,
         learning_rate=0.0005,
