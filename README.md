@@ -4,12 +4,12 @@ Software for classifying hand-written digits with a neural network, trained on t
 
 The application uses two different neural networks for classifying handwritten digits.
 
-1. Deep Neural Network
+1. Deep Neural Network  (accuracy: ~98,48%)
    - Is using the Tensorflow Sequential-Class
    - Normalizaation with minMax approach
    - Augmentation of a random sample
    - Augmentation and normalization is done without Tensorflows optimized prefetch-mechanism
-2. Convutional Neural Network
+2. Convutional Neural Network (accuracy: ~99,05%)
    - Is using the tensorflow Base-Model-Class with the Python call-method-approach
    - Normalization and Augmentation with Tensorflow's experimental preprocessing lib
    - Included Tensorboard for further analysis of the model
