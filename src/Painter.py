@@ -1,7 +1,7 @@
 from PyQt5 import QtCore
 from PyQt5 import QtGui
 from PyQt5 import QtWidgets
-from .Position import Position
+from Position import Position
 
 class Painter(QtWidgets.QWidget):
     ParentLink = 0
@@ -15,12 +15,12 @@ class Painter(QtWidgets.QWidget):
         self.LastPos = Position(0, 0)
 
     def mousePressEvent(self, event=None):
-        self.ParentLink.IsPainting = True 
-        self.ParentLink.ShapeNum += 1 
+        self.ParentLink.IsPainting = True
+        self.ParentLink.ShapeNum += 1
         self.LastPos = Position(0, 0)
 
     def mouseMoveEvent(self, event=None):
-        if self.ParentLink.IsPainting is True:  
+        if self.ParentLink.IsPainting is True:
             self.MouseLoc = Position(event.x(), event.y())
             if (self.LastPos.x != self.MouseLoc.x) and (
                 self.LastPos.y != self.MouseLoc.y
@@ -28,12 +28,12 @@ class Painter(QtWidgets.QWidget):
                 self.LastPos = Position(event.x(), event.y())
                 self.ParentLink.DrawingShapes.NewShape(
                     self.LastPos, self.ParentLink.ShapeNum
-                )  
+                )
             self.repaint()
 
     def mouseReleaseEvent(self, event=None):
-        if self.ParentLink.IsPainting is True:  
-            self.ParentLink.IsPainting = False  
+        if self.ParentLink.IsPainting is True:
+            self.ParentLink.IsPainting = False
 
     def paintEvent(self, event):
         painter = QtGui.QPainter()
@@ -42,9 +42,9 @@ class Painter(QtWidgets.QWidget):
         painter.end()
 
     def drawLines(self, event, painter):
-        for i in range(self.ParentLink.DrawingShapes.NumberOfShapes() - 1):  
-            T = self.ParentLink.DrawingShapes.GetShape(i)  
-            T1 = self.ParentLink.DrawingShapes.GetShape(i + 1)  
+        for i in range(self.ParentLink.DrawingShapes.NumberOfShapes() - 1):
+            T = self.ParentLink.DrawingShapes.GetShape(i)
+            T1 = self.ParentLink.DrawingShapes.GetShape(i + 1)
             if T.number == T1.number:
                 pen = QtGui.QPen(QtGui.QColor(0, 0, 0), 7, QtCore.Qt.SolidLine)
                 painter.setPen(pen)

@@ -6,11 +6,11 @@ from PyQt5 import QtGui
 from PyQt5 import QtWidgets
 from PyQt5 import uic
 
-from .config import GUI_DIR, IMAGE_DIR
-from .Shape import Shapes
-from .Painter import Painter
-from .ImagePreprocesser import ImagePreprocesser
-from .dnn.DeepNeuralNetwork import load_mnist_model
+from config import GUI_DIR, IMAGE_DIR
+from Shape import Shapes
+from Painter import Painter
+from ImagePreprocesser import ImagePreprocesser
+from dnn.DeepNeuralNetwork import load_mnist_model
 
 # Load the UI File
 GUI_MODEL = os.path.join(GUI_DIR, "GUI.ui")
@@ -31,7 +31,7 @@ class ApplicationUi(BASE, FORM):
         self.PaintPanel.close()
         self.DrawingFrame.insertWidget(0, self.PaintPanel)
         self.DrawingFrame.setCurrentWidget(self.PaintPanel)
-        
+
         # Set up Label for on hold picture
         self.label = QtWidgets.QLabel(self)
         self.label.setGeometry(QtCore.QRect(460, 70, 280, 280))

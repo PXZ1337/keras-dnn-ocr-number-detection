@@ -6,16 +6,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.ndimage import center_of_mass
 
-from.config import IMAGE_DIR, MNIST_IMAGE_WIDTH, MNIST_IMAGE_HEIGHT
+from config import IMAGE_DIR, MNIST_IMAGE_WIDTH, MNIST_IMAGE_HEIGHT
 
 import cv2
 
 
 """
-This class implements the required steps which were also applied to the images in the MNIST dataset. 
+This class implements the required steps which were also applied to the images in the MNIST dataset.
 This is necessary to reach the best possible result for the prediction.
 """
-class ImagePreprocesser: 
+class ImagePreprocesser:
     image_path: str = os.path.join(IMAGE_DIR, "temp_image.jpg")
     image: np.ndarray = None
 

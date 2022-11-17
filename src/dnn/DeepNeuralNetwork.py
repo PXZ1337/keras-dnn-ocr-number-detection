@@ -10,13 +10,16 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.utils import to_categorical
 
-from ..config import MODEL_FILE_PATH, MODEL_WEIGHTS_FILE_PATH
 from .MnistDataset import MnistDataset
+
+FILE_PATH = os.path.abspath(__file__)
+PROJECT_DIR = os.path.dirname(os.path.dirname(FILE_PATH))
+MODEL_FILE_PATH = os.path.join(PROJECT_DIR, "ressources", "dnn")
 
 class DeepNeuralNetwork:
     dataset = MnistDataset()
 
-    def __init__(self, num_features: int = 784, num_targets: int = 10, learning_rate: float = 0.0005, train_batch_size: int = 128, train_epochs: int = 15, model: Sequential = None): 
+    def __init__(self, num_features: int = 784, num_targets: int = 10, learning_rate: float = 0.0005, train_batch_size: int = 128, train_epochs: int = 15, model: Sequential = None):
         self.num_features = num_features
         self.num_targets = num_targets
         self.learning_rate = learning_rate
@@ -73,7 +76,6 @@ class DeepNeuralNetwork:
         scores = self.__model.evaluate(x=x_test, y=y_test)
         print(f"Scores: {scores}")
 
-        self.__model.save_weights(filepath=MODEL_WEIGHTS_FILE_PATH)
         self.__model.save(filepath=MODEL_FILE_PATH)
 
     def nn_predict(self, image: np.ndarray = None):

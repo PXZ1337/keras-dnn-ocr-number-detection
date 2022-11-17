@@ -1,5 +1,5 @@
 from typing import Any
-from .Position import Position
+from Position import Position
 
 class Shape:
     location = Position()
