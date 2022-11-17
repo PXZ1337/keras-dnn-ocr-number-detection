@@ -1,8 +1,6 @@
 # Deep Learning with Tensorflow, Keras and Python
 
-Software for classifying hand-written digits with a neural network, trained on the mnist dataset [Info](https://keras.io/api/datasets/mnist/).
-
-Simply run the `main.py` file.
+Software for classifying hand-written digits with a neural network, trained on the mnist dataset ([info](https://keras.io/api/datasets/mnist/)).
 
 The application uses two different neural networks for classifying handwritten digits.
 
@@ -23,6 +21,10 @@ The application uses two different neural networks for classifying handwritten d
 ## Usage
 
 Run `main.py`
+
+<img src="screen_1.PNG" alt="Screen 1" width="300"/>
+
+<img src="screen_2.PNG" alt="Screen 2" width="300"/>
 
 ## Requirements
 
